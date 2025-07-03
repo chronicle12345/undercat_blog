@@ -19,4 +19,7 @@ git commit -m 'deploy'
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 git push -f git@github.com:chronicle12345/undercat_blog.git HEAD:gh-pages
 
+# 清理 Git 仓库
+rm -rf .git
+
 cd -

@@ -60,6 +60,12 @@ if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
 
+echo 清理 Git 仓库...
+rd /s /q .git
+if %errorlevel% neq 0 (
+    echo 清理 Git 仓库失败，但不影响部署！
+)
+
 echo 返回原目录...
 cd ..\..\..
 
