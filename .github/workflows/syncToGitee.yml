@@ -2,7 +2,6 @@ name: Mirror the Github organization repos to Gitee.
 on:
   push:
     branches:
-      - main
       - gh-pages
 jobs:
   build-and-deploy:
