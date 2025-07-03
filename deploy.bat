@@ -5,7 +5,7 @@ REM 确保脚本遇到错误时停止执行
 setlocal EnableDelayedExpansion
 
 echo 正在生成静态文件...
-npm run docs:build
+call npm run docs:build
 if %errorlevel% neq 0 (
     echo 构建失败！
     pause
