@@ -1,20 +1,16 @@
-name: Mirror the Github organization repos to Gitee.
+name: Sync to Gitee
 on:
   push:
     branches:
       - gh-pages
 jobs:
-  build-and-deploy:
+  sync:
     runs-on: ubuntu-latest
     steps:
-    - name: Mirror the Github organization repos to Gitee.
-      uses: Yikun/hub-mirror-action@master
+    - name: Sync to Gitee
+      uses: wearerequired/git-mirror-action@master
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
       with:
-          src: github/chronicle12345
-          dst: gitee/chronicle12345
-          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token: ${{ secrets.GITEE_TOKEN }}
-          account_type: user
-          static_list: "undercat_blog"
-          force_update: true
-          debug: true
+        source-repo: git@github.com:chronicle12345/undercat_blog.git
+        destination-repo: git@gitee.com:chronicle12345/undercat_blog.git
