@@ -53,7 +53,7 @@ if %errorlevel% neq 0 (
 )
 
 echo 推送到 GitHub Pages...
-git push -f git@github.com:chronicle12345/undercat_blog.git main:gh-pages
+git push -f git@github.com:chronicle12345/undercat_blog.git HEAD:gh-pages
 if %errorlevel% neq 0 (
     echo Git push 失败！
     pause
