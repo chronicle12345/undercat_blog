@@ -20,6 +20,14 @@ if %errorlevel% neq 0 (
     exit /b %errorlevel%
 )
 
+echo 拷贝 .github 目录...
+xcopy /E /I /Y ..\..\..\.github .github
+if %errorlevel% neq 0 (
+    echo 拷贝 .github 目录失败！
+    pause
+    exit /b %errorlevel%
+)
+
 echo 初始化 Git 仓库...
 git init
 if %errorlevel% neq 0 (
@@ -45,7 +53,7 @@ if %errorlevel% neq 0 (
 )
 
 echo 推送到 GitHub Pages...
-git push -f git@github.com:chronicle12345/undercat_blog.git master:gh-pages
+git push -f git@github.com:chronicle12345/undercat_blog.git main:gh-pages
 if %errorlevel% neq 0 (
     echo Git push 失败！
     pause
