@@ -19,10 +19,15 @@ jobs:
       with:
         source-repo: https://github.com/chronicle12345/undercat_blog.git
         destination-repo: git@gitee.com:chronicle123/undercat_blog.git
-    - name: Build Gitee Pages
-      uses: yanglbme/gitee-pages-action@main
-      with:
-        gitee-username: chronicle123
-        gitee-password: ${{ secrets.GITEE_PASSWORD }}
-        gitee-repo: chronicle123/undercat_blog
-        branch: gh-pages
+    # Gitee Pages 不能用了
+    # 因服务维护调整，Gitee Pages 暂停提供服务，给您带来不便深感抱歉，感谢对 Gitee Pages 服务的支持。
+    # - name: Wait for sync to complete
+    #   run: sleep 10
+    
+    # - name: Build Gitee Pages
+    #   uses: yanglbme/gitee-pages-action@main
+    #   with:
+    #     gitee-username: chronicle123
+    #     gitee-password: ${{ secrets.GITEE_PASSWORD }}
+    #     gitee-repo: chronicle123/undercat_blog
+    #     branch: gh-pages
