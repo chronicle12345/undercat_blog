@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 module.exports = {
     title: 'undercat\'s blog',
     description: 'A blog about web development, programming, and technology',
@@ -40,4 +42,17 @@ module.exports = {
         lang: 'zh-CN'
         }
     },
+    plugins: [
+        [
+            '@vuepress/last-updated',
+            {
+            transformer: (timestamp, lang) => {
+                // 不要忘了安装 moment
+                const moment = require('moment')
+                moment.locale(lang)
+                return moment(timestamp).fromNow()
+            }
+            }
+        ]
+    ]
 }

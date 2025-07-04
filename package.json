@@ -12,6 +12,7 @@
     "docs:build": "vuepress build docs"
   },
   "dependencies": {
+    "moment": "^2.30.1",
     "vuepress-theme-reco": "^1.6.17"
   }
 }
