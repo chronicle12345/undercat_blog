@@ -4,6 +4,7 @@ module.exports = {
     theme: 'reco',
     base: '/undercat_blog/',
     themeConfig: {
+        lastUpdated: '上次更新',
         nav: [
             { text: '首页', link: '/' },
             { 
