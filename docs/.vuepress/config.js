@@ -44,13 +44,19 @@ module.exports = {
     },
     plugins: [
         [
+            // '@vuepress/last-updated',
+            // {
+            //     transformer: (timestamp, lang) => {
+            //         // 不要忘了安装 moment
+            //         const moment = require('moment')
+            //         moment.locale(lang)
+            //         return moment(timestamp).fromNow()
+            //     }
+            // }
             '@vuepress/last-updated',
             {
                 transformer: (timestamp, lang) => {
-                    // 不要忘了安装 moment
-                    const moment = require('moment')
-                    moment.locale(lang)
-                    return moment(timestamp).fromNow()
+                return new Date(timestamp).toLocaleDateString();
                 }
             }
         ],
@@ -59,6 +65,12 @@ module.exports = {
             {
                 copybuttonText: '复制',
                 copiedButtonText: '已复制！'
+            }
+        ],
+        [
+            'sitemap',
+            {
+                hostname: 'https://chronicle12345.github.io/undercat_blog/'
             }
         ]
     ]
